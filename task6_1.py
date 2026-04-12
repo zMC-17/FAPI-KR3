@@ -14,8 +14,6 @@ class UserModel(BaseModel):
     username: str
     password: str
 
-
-
 def is_authentificated(credentials: HTTPBasicCredentials = Depends(security)) -> str:
     for db_user in DATA_BASE:
         if db_user["username"] == credentials.username and db_user["password"] == credentials.password:
